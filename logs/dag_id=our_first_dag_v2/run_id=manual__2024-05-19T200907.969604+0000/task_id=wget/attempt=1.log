@@ -1,0 +1,17 @@
+[2024-05-19T20:09:10.108+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: our_first_dag_v2.wget manual__2024-05-19T20:09:07.969604+00:00 [queued]>
+[2024-05-19T20:09:10.130+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: our_first_dag_v2.wget manual__2024-05-19T20:09:07.969604+00:00 [queued]>
+[2024-05-19T20:09:10.130+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 11
+[2024-05-19T20:09:10.147+0000] {taskinstance.py:2191} INFO - Executing <Task(BashOperator): wget> on 2024-05-19 20:09:07.969604+00:00
+[2024-05-19T20:09:10.155+0000] {standard_task_runner.py:60} INFO - Started process 537 to run task
+[2024-05-19T20:09:10.178+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'our_first_dag_v2', 'wget', 'manual__2024-05-19T20:09:07.969604+00:00', '--job-id', '388', '--raw', '--subdir', 'DAGS_FOLDER/frist-dag.py', '--cfg-path', '/tmp/tmp1mdy_mtr']
+[2024-05-19T20:09:10.181+0000] {standard_task_runner.py:88} INFO - Job 388: Subtask wget
+[2024-05-19T20:09:10.297+0000] {task_command.py:423} INFO - Running <TaskInstance: our_first_dag_v2.wget manual__2024-05-19T20:09:07.969604+00:00 [running]> on host 7b23a6949395
+[2024-05-19T20:09:10.538+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='omar' AIRFLOW_CTX_DAG_ID='our_first_dag_v2' AIRFLOW_CTX_TASK_ID='wget' AIRFLOW_CTX_EXECUTION_DATE='2024-05-19T20:09:07.969604+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-05-19T20:09:07.969604+00:00'
+[2024-05-19T20:09:10.551+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-05-19T20:09:10.552+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'echo hello']
+[2024-05-19T20:09:10.615+0000] {subprocess.py:86} INFO - Output:
+[2024-05-19T20:09:10.618+0000] {subprocess.py:93} INFO - hello
+[2024-05-19T20:09:10.618+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2024-05-19T20:09:10.693+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=our_first_dag_v2, task_id=wget, execution_date=20240519T200907, start_date=20240519T200910, end_date=20240519T200910
+[2024-05-19T20:09:11.064+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-05-19T20:09:11.099+0000] {taskinstance.py:3280} INFO - 1 downstream tasks scheduled from follow-on schedule check

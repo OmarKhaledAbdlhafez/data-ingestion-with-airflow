@@ -1,0 +1,24 @@
+[2024-05-22T22:36:47.724+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: our_first_dag_v2.load_data scheduled__2024-05-21T00:00:00+00:00 [queued]>
+[2024-05-22T22:36:47.734+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: our_first_dag_v2.load_data scheduled__2024-05-21T00:00:00+00:00 [queued]>
+[2024-05-22T22:36:47.735+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 1
+[2024-05-22T22:36:47.751+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): load_data> on 2024-05-21 00:00:00+00:00
+[2024-05-22T22:36:47.762+0000] {standard_task_runner.py:60} INFO - Started process 7085 to run task
+[2024-05-22T22:36:47.765+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'our_first_dag_v2', 'load_data', 'scheduled__2024-05-21T00:00:00+00:00', '--job-id', '425', '--raw', '--subdir', 'DAGS_FOLDER/frist-dag.py', '--cfg-path', '/tmp/tmp8u_do2qx']
+[2024-05-22T22:36:47.766+0000] {standard_task_runner.py:88} INFO - Job 425: Subtask load_data
+[2024-05-22T22:36:47.827+0000] {task_command.py:423} INFO - Running <TaskInstance: our_first_dag_v2.load_data scheduled__2024-05-21T00:00:00+00:00 [running]> on host 7b23a6949395
+[2024-05-22T22:36:47.908+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='our_first_dag_v2' AIRFLOW_CTX_TASK_ID='load_data' AIRFLOW_CTX_EXECUTION_DATE='2024-05-21T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-05-21T00:00:00+00:00'
+[2024-05-22T22:36:47.945+0000] {logging_mixin.py:188} INFO - Hello from PythonOperator [0 1 2]
+[2024-05-22T22:36:48.009+0000] {logging_mixin.py:188} INFO -    number
+0       1
+[2024-05-22T22:36:48.707+0000] {warnings.py:109} WARNING - /opt/***/dags/frist-dag.py:39: UserWarning: Could not infer format, so each element will be parsed individually, falling back to `dateutil`. To ensure parsing is consistent and as-expected, please specify a format.
+  df.tpep_pickup_datetime = pd.to_datetime(df.tpep_pickup_datetime)
+
+[2024-05-22T22:37:00.095+0000] {warnings.py:109} WARNING - /opt/***/dags/frist-dag.py:40: UserWarning: Could not infer format, so each element will be parsed individually, falling back to `dateutil`. To ensure parsing is consistent and as-expected, please specify a format.
+  df.tpep_dropoff_datetime = pd.to_datetime(df.tpep_dropoff_datetime)
+
+[2024-05-22T22:37:21.918+0000] {logging_mixin.py:188} INFO - inserted another chunk, took 33.594 second
+[2024-05-22T22:37:25.712+0000] {logging_mixin.py:188} INFO - inserted another chunk, took 3.794 second
+[2024-05-22T22:37:25.714+0000] {python.py:201} INFO - Done. Returned value was: None
+[2024-05-22T22:37:25.723+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=our_first_dag_v2, task_id=load_data, execution_date=20240521T000000, start_date=20240522T223647, end_date=20240522T223725
+[2024-05-22T22:37:25.761+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-05-22T22:37:25.777+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,25 @@
+[2024-05-18T16:20:02.687+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: our_first_dag_v2.seceond_task manual__2024-05-18T16:19:57.475071+00:00 [queued]>
+[2024-05-18T16:20:02.696+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: our_first_dag_v2.seceond_task manual__2024-05-18T16:19:57.475071+00:00 [queued]>
+[2024-05-18T16:20:02.697+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 1
+[2024-05-18T16:20:02.715+0000] {taskinstance.py:2191} INFO - Executing <Task(BashOperator): seceond_task> on 2024-05-18 16:19:57.475071+00:00
+[2024-05-18T16:20:02.723+0000] {standard_task_runner.py:60} INFO - Started process 3266 to run task
+[2024-05-18T16:20:02.727+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'our_first_dag_v2', 'seceond_task', 'manual__2024-05-18T16:19:57.475071+00:00', '--job-id', '374', '--raw', '--subdir', 'DAGS_FOLDER/frist-dag.py', '--cfg-path', '/tmp/tmpjxjxecj4']
+[2024-05-18T16:20:02.729+0000] {standard_task_runner.py:88} INFO - Job 374: Subtask seceond_task
+[2024-05-18T16:20:02.782+0000] {task_command.py:423} INFO - Running <TaskInstance: our_first_dag_v2.seceond_task manual__2024-05-18T16:19:57.475071+00:00 [running]> on host 7b23a6949395
+[2024-05-18T16:20:02.878+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='our_first_dag_v2' AIRFLOW_CTX_TASK_ID='seceond_task' AIRFLOW_CTX_EXECUTION_DATE='2024-05-18T16:19:57.475071+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-05-18T16:19:57.475071+00:00'
+[2024-05-18T16:20:02.881+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-05-18T16:20:02.882+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'wc -l output.csv']
+[2024-05-18T16:20:02.900+0000] {subprocess.py:86} INFO - Output:
+[2024-05-18T16:20:02.906+0000] {subprocess.py:93} INFO - wc: output.csv: No such file or directory
+[2024-05-18T16:20:02.907+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2024-05-18T16:20:02.919+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/bash.py", line 212, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2024-05-18T16:20:02.924+0000] {taskinstance.py:1138} INFO - Marking task as FAILED. dag_id=our_first_dag_v2, task_id=seceond_task, execution_date=20240518T161957, start_date=20240518T162002, end_date=20240518T162002
+[2024-05-18T16:20:02.939+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 374 for task seceond_task (Bash command failed. The command returned a non-zero exit code 1.; 3266)
+[2024-05-18T16:20:02.979+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2024-05-18T16:20:03.002+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,17 @@
+[2024-05-19T20:30:07.462+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: our_first_dag_v2.seceond_task manual__2024-05-19T20:30:04.158720+00:00 [queued]>
+[2024-05-19T20:30:07.468+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: our_first_dag_v2.seceond_task manual__2024-05-19T20:30:04.158720+00:00 [queued]>
+[2024-05-19T20:30:07.469+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 1
+[2024-05-19T20:30:07.482+0000] {taskinstance.py:2191} INFO - Executing <Task(BashOperator): seceond_task> on 2024-05-19 20:30:04.158720+00:00
+[2024-05-19T20:30:07.489+0000] {standard_task_runner.py:60} INFO - Started process 380 to run task
+[2024-05-19T20:30:07.491+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'our_first_dag_v2', 'seceond_task', 'manual__2024-05-19T20:30:04.158720+00:00', '--job-id', '409', '--raw', '--subdir', 'DAGS_FOLDER/frist-dag.py', '--cfg-path', '/tmp/tmp78zf2iu2']
+[2024-05-19T20:30:07.492+0000] {standard_task_runner.py:88} INFO - Job 409: Subtask seceond_task
+[2024-05-19T20:30:07.529+0000] {task_command.py:423} INFO - Running <TaskInstance: our_first_dag_v2.seceond_task manual__2024-05-19T20:30:04.158720+00:00 [running]> on host 7b23a6949395
+[2024-05-19T20:30:07.598+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='our_first_dag_v2' AIRFLOW_CTX_TASK_ID='seceond_task' AIRFLOW_CTX_EXECUTION_DATE='2024-05-19T20:30:04.158720+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-05-19T20:30:04.158720+00:00'
+[2024-05-19T20:30:07.599+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-05-19T20:30:07.600+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'wc -l /opt/***/output.csv']
+[2024-05-19T20:30:07.613+0000] {subprocess.py:86} INFO - Output:
+[2024-05-19T20:30:07.618+0000] {subprocess.py:93} INFO - 240019 /opt/***/output.csv
+[2024-05-19T20:30:07.619+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2024-05-19T20:30:07.641+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=our_first_dag_v2, task_id=seceond_task, execution_date=20240519T203004, start_date=20240519T203007, end_date=20240519T203007
+[2024-05-19T20:30:07.664+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-05-19T20:30:07.683+0000] {taskinstance.py:3280} INFO - 1 downstream tasks scheduled from follow-on schedule check

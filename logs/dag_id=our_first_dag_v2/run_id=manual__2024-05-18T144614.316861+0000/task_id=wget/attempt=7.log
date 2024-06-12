@@ -1,0 +1,25 @@
+[2024-05-18T14:58:26.407+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: our_first_dag_v2.wget manual__2024-05-18T14:46:14.316861+00:00 [queued]>
+[2024-05-18T14:58:26.425+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: our_first_dag_v2.wget manual__2024-05-18T14:46:14.316861+00:00 [queued]>
+[2024-05-18T14:58:26.426+0000] {taskinstance.py:2170} INFO - Starting attempt 7 of 11
+[2024-05-18T14:58:26.450+0000] {taskinstance.py:2191} INFO - Executing <Task(BashOperator): wget> on 2024-05-18 14:46:14.316861+00:00
+[2024-05-18T14:58:26.466+0000] {standard_task_runner.py:60} INFO - Started process 1859 to run task
+[2024-05-18T14:58:26.482+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'our_first_dag_v2', 'wget', 'manual__2024-05-18T14:46:14.316861+00:00', '--job-id', '331', '--raw', '--subdir', 'DAGS_FOLDER/frist-dag.py', '--cfg-path', '/tmp/tmp5h7vsw7t']
+[2024-05-18T14:58:26.486+0000] {standard_task_runner.py:88} INFO - Job 331: Subtask wget
+[2024-05-18T14:58:26.617+0000] {task_command.py:423} INFO - Running <TaskInstance: our_first_dag_v2.wget manual__2024-05-18T14:46:14.316861+00:00 [running]> on host 7b23a6949395
+[2024-05-18T14:58:26.754+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='omar' AIRFLOW_CTX_DAG_ID='our_first_dag_v2' AIRFLOW_CTX_TASK_ID='wget' AIRFLOW_CTX_EXECUTION_DATE='2024-05-18T14:46:14.316861+00:00' AIRFLOW_CTX_TRY_NUMBER='7' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-05-18T14:46:14.316861+00:00'
+[2024-05-18T14:58:26.756+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-05-18T14:58:26.758+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'wget https://d37ci6vzurychx.cloudfront.net/misc/taxi_zone_lookup.csv']
+[2024-05-18T14:58:26.777+0000] {subprocess.py:86} INFO - Output:
+[2024-05-18T14:58:26.780+0000] {subprocess.py:93} INFO - /usr/bin/bash: line 1: wget: command not found
+[2024-05-18T14:58:26.781+0000] {subprocess.py:97} INFO - Command exited with return code 127
+[2024-05-18T14:58:26.794+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/bash.py", line 212, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 127.
+[2024-05-18T14:58:26.798+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=our_first_dag_v2, task_id=wget, execution_date=20240518T144614, start_date=20240518T145826, end_date=20240518T145826
+[2024-05-18T14:58:26.814+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 331 for task wget (Bash command failed. The command returned a non-zero exit code 127.; 1859)
+[2024-05-18T14:58:26.857+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2024-05-18T14:58:26.883+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

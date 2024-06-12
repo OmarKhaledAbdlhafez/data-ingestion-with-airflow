@@ -1,0 +1,28 @@
+[2024-05-18T15:28:49.287+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: our_first_dag_v2.wget manual__2024-05-18T15:24:43.594597+00:00 [queued]>
+[2024-05-18T15:28:49.295+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: our_first_dag_v2.wget manual__2024-05-18T15:24:43.594597+00:00 [queued]>
+[2024-05-18T15:28:49.296+0000] {taskinstance.py:2170} INFO - Starting attempt 3 of 11
+[2024-05-18T15:28:49.311+0000] {taskinstance.py:2191} INFO - Executing <Task(BashOperator): wget> on 2024-05-18 15:24:43.594597+00:00
+[2024-05-18T15:28:49.318+0000] {standard_task_runner.py:60} INFO - Started process 2437 to run task
+[2024-05-18T15:28:49.320+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'our_first_dag_v2', 'wget', 'manual__2024-05-18T15:24:43.594597+00:00', '--job-id', '358', '--raw', '--subdir', 'DAGS_FOLDER/frist-dag.py', '--cfg-path', '/tmp/tmpfpgl8ula']
+[2024-05-18T15:28:49.323+0000] {standard_task_runner.py:88} INFO - Job 358: Subtask wget
+[2024-05-18T15:28:49.369+0000] {task_command.py:423} INFO - Running <TaskInstance: our_first_dag_v2.wget manual__2024-05-18T15:24:43.594597+00:00 [running]> on host 7b23a6949395
+[2024-05-18T15:28:49.445+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='omar' AIRFLOW_CTX_DAG_ID='our_first_dag_v2' AIRFLOW_CTX_TASK_ID='wget' AIRFLOW_CTX_EXECUTION_DATE='2024-05-18T15:24:43.594597+00:00' AIRFLOW_CTX_TRY_NUMBER='3' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-05-18T15:24:43.594597+00:00'
+[2024-05-18T15:28:49.447+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-05-18T15:28:49.449+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'curl https://d37ci6vzurychx.cloudfront.net/misc/taxi_zone_lookup.csv -O /opt/***/output.csv']
+[2024-05-18T15:28:49.462+0000] {subprocess.py:86} INFO - Output:
+[2024-05-18T15:28:49.469+0000] {subprocess.py:93} INFO -   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+[2024-05-18T15:28:49.470+0000] {subprocess.py:93} INFO -                                  Dload  Upload   Total   Spent    Left  Speed
+[2024-05-18T15:28:49.805+0000] {subprocess.py:93} INFO -   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 12331  100 12331    0     0  36730      0 --:--:-- --:--:-- --:--:-- 36808
+[2024-05-18T15:28:49.808+0000] {subprocess.py:93} INFO - curl: (3) URL using bad/illegal format or missing URL
+[2024-05-18T15:28:49.810+0000] {subprocess.py:97} INFO - Command exited with return code 3
+[2024-05-18T15:28:49.828+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/bash.py", line 212, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 3.
+[2024-05-18T15:28:49.831+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=our_first_dag_v2, task_id=wget, execution_date=20240518T152443, start_date=20240518T152849, end_date=20240518T152849
+[2024-05-18T15:28:49.846+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 358 for task wget (Bash command failed. The command returned a non-zero exit code 3.; 2437)
+[2024-05-18T15:28:49.895+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2024-05-18T15:28:49.924+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
